@@ -8,21 +8,26 @@ import Settings from './components/Settings/settings';
 import Music from './components/Music/music';
 import News from './components/News/news';
 import Footer from './components/Footer/footer';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 const App = () => {
     return (
+      <BrowserRouter>
         <div className='app-wrapper'>
          <Header />
          <Nav />
          <div className='app-content'>
-           <Profile />
-           <Messages />
-           <News />
-           <Music />
-           <Settings />
+           <Routes>
+             <Route path="/profile" element={<Profile/>}/>
+             <Route path="/messages" element= {<Messages/>}/>
+             <Route path="/news" element={<News/>}/>
+             <Route path="/music" element={<Music/>}/>
+             <Route path="/settings" element={<Settings/>}/>
+           </Routes>
          </div>
          <Footer />
         </div>
+      </BrowserRouter>
       );
 }
 
