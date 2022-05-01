@@ -7,27 +7,37 @@ const Nav = (props) => {
     <div className={classes.nav}>
       <ul className={classes['nav-list']}>
         <li className={classes['nav-list-item']}>
-          <NavLink to="/profile" className={classes['nav-link']}>
+          <NavLink 
+            to="/profile" 
+            className = { navData => navData.isActive ? classes['nav-link-active'] : classes['nav-link'] }>
             Profile
           </NavLink>
         </li>
         <li className={classes['nav-list-item']}>
-          <NavLink to="/messages" className={classes['nav-link']}>
+          <NavLink 
+            to="/messages" 
+            className = { navData => navData.isActive ? classes['nav-link-active'] : classes['nav-link'] }>
             Messages
           </NavLink>
         </li>
         <li className={classes['nav-list-item']}>
-          <NavLink to="/news" className={classes['nav-link']}>
+          <NavLink 
+            to="/news" 
+            className = { navData => navData.isActive ? classes['nav-link-active'] : classes['nav-link'] }>
             News
           </NavLink>
         </li>
         <li className={classes['nav-list-item']}>
-          <NavLink to="/music" className={classes['nav-link']}>
+          <NavLink 
+            to="/music" 
+            className = { navData => navData.isActive ? classes['nav-link-active'] : classes['nav-link'] }>
             Music
           </NavLink>
         </li>
         <li className={classes['nav-list-item']}>
-          <NavLink to="/settings" className={classes['nav-link']}>
+          <NavLink 
+            to="/settings" 
+            className = { navData => navData.isActive ? classes['nav-link-active'] : classes['nav-link'] }>
             Settings
           </NavLink>
         </li>
