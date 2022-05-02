@@ -2,6 +2,14 @@ import React from 'react';
 import classes from './my-posts.module.css';
 import Post from './Post/post';
 
+const postsData = [
+  {id: 1, message: "Hello wrld!", likeCount: 2},
+  {id: 2, message: "Hello wrld!", likeCount: 0},
+  {id: 3, message: "Hello wrld!", likeCount: 6},
+  {id: 4, message: "Hello wrld!", likeCount: 4},
+  {id: 5, message: "Hello wrld!", likeCount: 1},  
+];
+
 const MyPosts = (props) => {
   return (
     <div className="my-posts">
