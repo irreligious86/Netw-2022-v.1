@@ -1,0 +1,20 @@
+.post {
+
+}
+
+.post-title {
+  
+}
+
+.post-author-ava {
+ width: 50px;
+ height: 50px;
+ border: 3px solid rgb(49, 239, 49);
+ border-radius: 10%;
+ background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8II5A8OzCGjpl59GUZ96P8wGhjwAhgqhQ5Q&usqp=CAU");
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+
