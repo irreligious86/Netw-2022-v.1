@@ -2,30 +2,35 @@ import React from 'react';
 import classes from './my-posts.module.css';
 import Post from './Post/post';
 
-const postsData = [
-  {id: 1, message: "Hello wrld!", likeCount: 2},
-  {id: 2, message: "Hello wrld!", likeCount: 0},
-  {id: 3, message: "Hello wrld!", likeCount: 6},
-  {id: 4, message: "Hello wrld!", likeCount: 4},
-  {id: 5, message: "Hello wrld!", likeCount: 1},  
-];
-
 const MyPosts = (props) => {
+
+  const postsElements = props.postsData
+  .map( post => <Post message={post.message} likesCount={post.likesCount} /> );
+
+  const addPost = (props) => {
+    const text = newPostElement.current.value;
+    alert(text);
+  }
+
+  const newPostElement = React.createRef();
+
   return (
     <div className="my-posts">
       <h5 className={classes['my-posts-title']}>My posts</h5>
       <div className={classes["input-text"]}>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <textarea 
+          name="" 
+          id="" 
+          cols="60" 
+          rows="3"
+          ref={newPostElement}
+        ></textarea>
       </div>
       <div className={classes["input-controls"]}>
-        <button type='button'>Add post</button>
-        <button type='button'>Clean</button>
+        <button type='button' onClick={ () => addPost() }>Add post</button>
+        <button type='button' onClick={ () => {alert('Clean')} }>Clean</button>
       </div>
-      <Post message="Hello wrld!" likeCount="2" />
-      <Post message="Hello wrld!" likeCount="0" />
-      <Post message="Hello wrld!" likeCount="6" />
-      <Post message="Hello wrld!" likeCount="1" />
-      <Post message="Hello wrld!" likeCount="2" />
+      {postsElements}
     </div>
   )
 }

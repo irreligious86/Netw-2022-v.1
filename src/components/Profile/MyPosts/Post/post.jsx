@@ -7,7 +7,7 @@ const Post = (props) => {
       <h5 className={classes['post-title']}>Post title</h5>
       <div className={classes['post-author-ava']}></div>
       <p>{props.message}</p>
-      <p>Like: {props.likeCount}</p>
+      <p>Like: {props.likesCount}</p>
     </div>
   )
 }

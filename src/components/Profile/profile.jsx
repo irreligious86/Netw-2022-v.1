@@ -8,7 +8,7 @@ const Profile = (props) => {
     <div className={classes['profile']}>
       <h5 className={classes['profile-title']}>Profile</h5>
       <ProfileInfo />
-      <MyPosts />
+      <MyPosts postsData={props.postsData} />
     </div>
   )
 }
