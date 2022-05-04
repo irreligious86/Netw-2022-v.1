@@ -15,9 +15,9 @@ const Nav = (props) => {
         </li>
         <li className={classes['nav-list-item']}>
           <NavLink 
-            to="/messenger" 
+            to="/dialogs" 
             className = { navData => navData.isActive ? classes['nav-link-active'] : classes['nav-link'] }>
-            Messenger
+            Dialogs
           </NavLink>
         </li>
         <li className={classes['nav-list-item']}>
