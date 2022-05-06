@@ -8,12 +8,13 @@ import Settings from './components/Settings/settings';
 import Music from './components/Music/music';
 import News from './components/News/news';
 import Footer from './components/Footer/footer';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
+import { addPost } from './Redux/state';
 
 const App = (props) => {
   console.log(props);
     return (
-      <BrowserRouter>
+      
         <div className='app-wrapper'>
          <Header />
          <Nav />
@@ -21,11 +22,16 @@ const App = (props) => {
            <Routes>
              <Route 
                path="/profile" 
-               element={<Profile profilePage={props.state.profilePage} />}
+               element={<Profile 
+                profilePage={props.state.profilePage}
+                addPost={addPost}
+              />}
             />
              <Route 
                path="/dialogs" 
-               element={<Dialogs dialogsPage={props.state.dialogsPage} />}
+               element={<Dialogs 
+                dialogsPage={props.state.dialogsPage}
+               />}
              />
              <Route path="/news" element={<News/>}/>
              <Route path="/music" element={<Music/>}/>
@@ -34,7 +40,7 @@ const App = (props) => {
          </div>
          <Footer />
         </div>
-      </BrowserRouter>
+      
       );
 }
 

@@ -7,9 +7,10 @@ const MyPosts = (props) => {
   const postsElements = props.postsData
   .map( post => <Post message={post.message} likesCount={post.likesCount} /> );
 
-  const addPost = (props) => {
+  const addPost = () => {
     const text = newPostElement.current.value;
-    alert(text);
+    props.addPost(text);
+    newPostElement.current.value = '';
   }
 
   const newPostElement = React.createRef();
@@ -24,7 +25,7 @@ const MyPosts = (props) => {
           cols="60" 
           rows="3"
           ref={newPostElement}
-        ></textarea>
+        />
       </div>
       <div className={classes["input-controls"]}>
         <button type='button' onClick={ () => addPost() }>Add post</button>

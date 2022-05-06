@@ -1,4 +1,5 @@
 
+import { rerenderEntireTree } from '../render';
 
 const state = {
 
@@ -54,7 +55,9 @@ export const addPost = (postMessage) => {
     likesCount: 0,
   }
 
+  console.log('AddPost  done!');
   state.profilePage.postsData.push(newPost);
+  rerenderEntireTree(state);
 
 }
 
