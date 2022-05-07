@@ -10,7 +10,12 @@ const MyPosts = (props) => {
   const addPost = () => {
     const text = newPostElement.current.value;
     props.addPost(text);
-    newPostElement.current.value = '';
+    props.updateNewPostText('');
+  }
+
+  const onPostChange = () => {
+    const text = newPostElement.current.value;
+    props.updateNewPostText(text);
   }
 
   const newPostElement = React.createRef();
@@ -25,6 +30,8 @@ const MyPosts = (props) => {
           cols="60" 
           rows="3"
           ref={newPostElement}
+          value={props.newPostText}
+          onChange={onPostChange}
         />
       </div>
       <div className={classes["input-controls"]}>

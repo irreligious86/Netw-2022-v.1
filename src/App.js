@@ -9,11 +9,10 @@ import Music from './components/Music/music';
 import News from './components/News/news';
 import Footer from './components/Footer/footer';
 import { Routes, Route} from "react-router-dom";
-import { addPost } from './Redux/state';
 
 const App = (props) => {
-  console.log(props);
-    return (
+
+  return (
       
         <div className='app-wrapper'>
          <Header />
@@ -24,7 +23,8 @@ const App = (props) => {
                path="/profile" 
                element={<Profile 
                 profilePage={props.state.profilePage}
-                addPost={addPost}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
               />}
             />
              <Route 

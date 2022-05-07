@@ -21,6 +21,7 @@ const state = {
         message: "All houses in the suburbs of Vienna must be plucked down. — from Measure for Measure", 
         likesCount: 1},  
     ],
+    newPostText: 'it-kamasutra'
   },
 
   dialogsPage: {
@@ -55,10 +56,14 @@ export const addPost = (postMessage) => {
     likesCount: 0,
   }
 
-  console.log('AddPost  done!');
   state.profilePage.postsData.push(newPost);
   rerenderEntireTree(state);
 
+}
+
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
 }
 
 export default state;
