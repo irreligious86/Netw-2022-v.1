@@ -1,25 +1,47 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './components/Header/header';
+import Nav from './components/Nav/nav';
+import Profile from './components/Profile/profile';
+import Dialogs from './components/Dialogs/dialogs';
+import Settings from './components/Settings/settings';
+import Music from './components/Music/music';
+import News from './components/News/news';
+import Footer from './components/Footer/footer';
+import { Routes, Route} from "react-router-dom";
 
-function App() {
+const App = (props) => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      
+        <div className='app-wrapper'>
+         <Header />
+         <Nav />
+         <div className='app-content'>
+           <Routes>
+             <Route 
+               path="/profile" 
+               element={<Profile 
+                profilePage={props.state.profilePage}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
+              />}
+            />
+             <Route 
+               path="/dialogs" 
+               element={<Dialogs 
+                dialogsPage={props.state.dialogsPage}
+               />}
+             />
+             <Route path="/news" element={<News/>}/>
+             <Route path="/music" element={<Music/>}/>
+             <Route path="/settings" element={<Settings/>}/>
+           </Routes>
+         </div>
+         <Footer />
+        </div>
+      
+      );
 }
 
 export default App;
