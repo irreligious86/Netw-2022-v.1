@@ -1,5 +1,5 @@
 
-// import { rerenderEntireTree } from '../render';
+
 
 let rerenderEntireTree = () => {
   console.log('State was changed');
